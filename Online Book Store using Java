@@ -1,0 +1,66 @@
+/*
+In this code I have made an online book store where you can Add Book,Issue book,Return Book
+Its an Simple code help you to better understand class concept alongwith ArrayList
+*/
+
+import java.util.ArrayList;
+
+public class Solution {
+    public static void main(String[] args) {
+        Library library = new Library();
+        library.addBook("Java");
+        library.addBook("python");
+        library.addBook("C++");
+        library.addBook("Ruby");
+        library.addBook("Physics");
+        library.addBook("Chemistry");
+        library.addBook("Rust");
+        library.addBook("Maths");
+
+        library.showAvailableBook();
+        library.issueBook("Maths");
+        library.issueBook("Ruby");
+        library.issueBook("C++");
+        library.showIssuedBook();
+        library.showAvailableBook();
+        library.returnBook("Maths");
+        library.showIssuedBook();
+        library.showAvailableBook();
+    }
+}
+
+class Library {
+    private ArrayList<String> availbleBook = new ArrayList<>();
+    private ArrayList<String> issuedBook = new ArrayList<>();
+
+    public void addBook(String Book) {
+        availbleBook.add(Book);
+    }
+
+    public void issueBook(String Book) {
+        availbleBook.remove(Book);
+        issuedBook.add(Book);
+    }
+
+    public void returnBook(String Book) {
+        issuedBook.remove(Book);
+        availbleBook.add(Book);
+    }
+
+    public void showAvailableBook() {
+        System.out.println("Available books");
+        for (String book : availbleBook) {
+            System.out.println(book);
+        }
+        System.out.println();
+
+    }
+
+    public void showIssuedBook() {
+        System.out.println("Issued books");
+        for (String book : issuedBook) {
+            System.out.println(book);
+        }
+        System.out.println();
+    }
+}
