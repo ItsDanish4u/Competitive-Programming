@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int lineNumber = 1;
+        while(sc.hasNext()){ /* hasNext() method wait until user give input. you have to Give endOfFile signal to this method to Stop the program otherwise it will wait for user input everytime."ctrl + D" to give EOF signal. */
+             String s = sc.nextLine();
+            System.out.println(lineNumber + " " + s);
+            lineNumber++;
+        }
+    }
+}
