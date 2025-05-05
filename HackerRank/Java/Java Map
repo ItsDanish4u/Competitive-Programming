@@ -11,7 +11,7 @@ class Solution{
 		for(int i=0;i<n;i++){
            String name = sc.nextLine();
            int number = sc.nextInt();
-           sc.nextLine(); // this line help to avoid Enter key (newline character \n) which is left by nextInt method because it only reads number and leaves enter key \n in buffer so if you take nextline method it                           //absorbs the enter key which help to take next inputs correctly.  
+           sc.nextLine(); // this line help to avoid Enter key (newline character \n) which is left by nextInt method because it only reads number and leaves enter key \n in buffer so if you take nextline method it absorbs the enter key which help to take next inputs correctly.  
            phoneBook.put(name,number);
         }
         while(sc.hasNext()){
