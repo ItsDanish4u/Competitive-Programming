@@ -1,0 +1,40 @@
+import java.util.*;
+class Solution{
+	
+	public static void main(String []argh)
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		while (sc.hasNext()) {
+			String input=sc.next();
+            //Complete the code
+            System.out.println(isBalance(input));
+            
+		}
+		
+	}
+    public static boolean isBalance(String s){
+         Stack<Character> stack = new Stack<>();
+         Map<Character, Character> map = new HashMap<>(); // map check krne k liye bnaya hai ki open bracket hai ya close
+         map.put(')','(');
+         map.put('}','{');
+         map.put(']','[');
+         for(char c : s.toCharArray()){
+            if(map.containsValue(c)){   //agar open bracket h to stack m aadd krdo
+                stack.push(c);
+            }
+            else if(map.containsKey(c)){  //agar close bracket hai to check kro uska cooresponding open bracket stack m hai ya nhi agar nhi hai ya stack empty hai(empty ka matlb phla character hi close bracket hai lekin agar phla hi character close bracket hoga to string balanace nhi hogi) to false return krdo
+                if(stack.isEmpty() || stack.pop() != map.get(c)){
+                    return false;
+                }
+            }
+            else{ // agar close ya open bracket ke alawa kuch eneter kiya to balance nhui hogi
+                return false; 
+            }
+         }
+         return stack.isEmpty(); // sab check krne k baad ab agar stack empty hua to balance string thi kyuki sari close bracket ke corresponding k open bracket ko pop kr diya stack se
+    }
+}
+
+
+
