@@ -1,0 +1,16 @@
+fun gcd(n1: Int, n2: Int): Int {
+   var num1 = n1
+    var num2 = n2
+    while (num2 != 0){
+        var rem = num1 % num2
+        num1 = num2
+        num2 = rem
+    }
+    return num1
+}
+
+fun main() {
+    val N1 = 56
+    val N2 = 98
+    println(gcd(N1, N2)) 
+}
